@@ -1,0 +1,5 @@
+#!/bin/bash
+
+VER=$(grep -o -P "(?<=LABEL version=\").*(?=\")" Dockerfile)
+
+docker build --no-cache --tag craftdb/forge:${VER} .
